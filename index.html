@@ -2,14 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script src="https://unpkg.com/@stoplight/elements-web-components/styles.min.js"></script>
-    <script src="https://unpkg.com/@stoplight/elements-web-components/standalone.min.js"></script>
+    <title>Elements minimal</title>
+    <!-- ✅ 正确：CSS 用 link 引入 -->
+    <link rel="stylesheet" href="https://unpkg.com/@stoplight/elements-web-components/dist/elements.min.css" />
+    <!-- ✅ 正确：JS bundle -->
+    <script src="https://unpkg.com/@stoplight/elements-web-components/dist/elements.min.js"></script>
+    <style>html,body{height:100%} body{margin:0} elements-api{height:100vh; display:block}</style>
   </head>
   <body>
+    <!-- ✅ 官方示例的 Web Component 写法 -->
     <elements-api
-      apiDescriptionUrl="https://api.apis.guru/v2/specs/github.com/1.1.4/openapi.yaml"
+      apiDescriptionUrl="https://raw.githubusercontent.com/stoplightio/Public-APIs/master/reference/zoom/zoom.yaml"
       router="hash"
-      layout="sidebar"
-    />
+      layout="sidebar">
+    </elements-api>
   </body>
 </html>
